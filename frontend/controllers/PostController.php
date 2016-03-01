@@ -36,4 +36,20 @@ class PostController extends Controller
             'model' => $model,
         ]);
     }
+
+    public function actionView($id)
+    {
+        $model = $this->findModel($id);
+        return $this->render('view', [
+            'model' => $model,
+        ]);
+    }
+
+    protected function findModel($id)
+    {
+        $model = Post::findOne($id);
+
+        return $model;
+    }
+
 }
