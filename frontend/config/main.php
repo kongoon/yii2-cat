@@ -36,6 +36,13 @@ return [
             ],
         ],
         */
+        'view' => [
+            'theme' => [
+                'pathMap' => [
+                    '@app/views' => '@frontend/themes/manop/views'
+                ]
+            ]
+        ]
     ],
     'params' => $params,
 ];
