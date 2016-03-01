@@ -45,6 +45,14 @@ class PostController extends Controller
         ]);
     }
 
+    public function actionUpdate($id)
+    {
+        $model = $this->findModel($id);
+        return $this->render('update', [
+            'model' => $model,
+        ]);
+    }
+
     protected function findModel($id)
     {
         $model = Post::findOne($id);
