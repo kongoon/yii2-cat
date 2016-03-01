@@ -3,6 +3,7 @@ namespace frontend\controllers;
 use yii\web\Controller;
 use frontend\models\Post;
 use yii\data\ActiveDataProvider;
+use Yii;
 
 class PostController extends Controller
 {
@@ -23,7 +24,14 @@ class PostController extends Controller
     public function actionCreate()
     {
         $model = new Post();
-
+        if($model->load(Yii::$app->request->post()))
+        {
+            $model->user_id = Yii::$app->user->getId();
+            if($model->save())
+            {
+                return $this->redirect(['index']);
+            }
+        }
         return $this->render('create', [
             'model' => $model,
         ]);
