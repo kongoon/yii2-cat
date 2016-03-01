@@ -1,5 +1,5 @@
 <?php
-namespace fontend\controllers;
+namespace frontend\controllers;
 use yii\web\Controller;
 use frontend\models\Post;
 use yii\data\ActiveDataProvider;
