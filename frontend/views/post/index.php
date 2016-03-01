@@ -1,7 +1,9 @@
 <?php
 use yii\grid\GridView;
+use yii\helpers\Html;
 ?>
 <h1>Post List</h1>
+<?=Html::a('เพิ่มข้อมูล', ['create'], ['class' => 'btn btn-info'])?>
 <?=GridView::widget([
     'dataProvider' => $dataProvider,
     'columns' => [

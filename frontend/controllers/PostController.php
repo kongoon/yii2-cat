@@ -20,4 +20,12 @@ class PostController extends Controller
             'dataProvider' => $dataProvider
         ]);
     }
+    public function actionCreate()
+    {
+        $model = new Post();
+
+        return $this->render('create', [
+            'model' => $model,
+        ]);
+    }
 }
