@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 use yii\web\Controller;
 use frontend\models\Bmi;
+use Yii;
 
 class BmiController extends Controller
 {
@@ -15,7 +16,7 @@ class BmiController extends Controller
         $model = new Bmi();
         $bmi = null;
         if($model->load(Yii::$app->request->post())){
-            $bmi = $model->weight/($model->high*$model->hight);
+            $bmi = $model->weight/($model->high*$model->high);
         }
         //$name = "Manop Kongoon";
         return $this->render('cal', [

@@ -8,3 +8,5 @@ use yii\helpers\Html;
 <?=$form->field($model, 'weight')?>
 <?=Html::submitButton('คำนวณ', ['class' => 'btn btn-success'])?>
 <?php ActiveForm::end()?>
+
+Your BMI is <?=$bmi?>
